@@ -23,6 +23,13 @@ def foop(user):
 class RunBinSh(object):
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
+    
+def sanitize(version):
+    try:
+        s = str(version)
+    except e:
+        s = "1.0"
+    return s
 
 def import_urlib_version(version):
     subprocess.Popen("import urllib%s as urllib" % version)
