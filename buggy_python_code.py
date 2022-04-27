@@ -32,7 +32,7 @@ def sanitize(version):
     return s
 
 def import_urlib_version(version):
-    subprocess.Popen("import urllib%s as urllib" % version)
+    subprocess.Popen("import urllib%s as urllib" % sanitize(version))
 
 @app.route('/')
 def index():
