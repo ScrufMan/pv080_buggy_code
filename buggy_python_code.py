@@ -31,6 +31,7 @@ def sanitize(version):
         s = "1.0"
     return s
 
+
 def import_urlib_version(version):
     subprocess.Popen("import urllib%s as urllib" % sanitize(version))
 
